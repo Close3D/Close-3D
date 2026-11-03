@@ -40,7 +40,7 @@ const PRODUCTS = [
 ];
 function card(p){
   const url = STORE+"/products/"+p.handle;
-  const pics = `<span>${p.name}</span>` + p.img.map(i=>`<img src="img/${i[0]}" alt="${i[1]}" loading="lazy" onerror="this.remove()">`).join("");
+  const pics = `<span>${p.name}</span>` + p.img.map(i=>`<img src="/img/${i[0]}" alt="${i[1]}" loading="lazy" onerror="this.remove()">`).join("");
   const spec = p.spec ? `<p class="spec">${p.spec}</p>` : "";
   return `<article class="card"><a class="ph" href="${url}">${pics}</a><div class="info"><h3>${p.name}</h3><p>${p.blurb}</p>${spec}<div class="foot"><span class="price">${p.price}</span><a class="buy" href="${url}">Buy on store</a></div></div></article>`;
 }
