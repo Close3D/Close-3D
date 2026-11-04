@@ -23,7 +23,7 @@ const PRODUCTS = [
        ["steam-clock-2.jpg","Steam Clock vase, second angle"]]},
  {name:"Lions Gate Bridge Vase", series:"vancouver", price:"$45", handle:"lions-gate-bridge-vase-vancouver", spec:VASE,
   blurb:"Bridge towers, North Shore ridgeline and water, wrapped around the vase.",
-  img:[["LIONS_GATE_BRIDGE.jpg","Green and black 3D printed vase showing Lions Gate Bridge, on a wood table"],
+  img:[["LIONS_GATE_LEFTVIEW.jpg","Green and black 3D printed vase showing Lions Gate Bridge, on a wood table"],
        ["LIONS_GATE_BRIDGE_FRONT.jpg","Front of the Lions Gate Bridge vase showing the bridge and skyline relief"]]},
  {name:"Science World Vase", series:"vancouver", price:"$45", handle:"science-world-vase-vancouver", spec:VASE,
   blurb:"Science World's geodesic dome and the False Creek skyline.",
