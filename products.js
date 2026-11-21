@@ -1,5 +1,5 @@
 // ── EDIT HERE ─────────────────────────────────────────────
-// Photos live in the /images folder next to these files.
+// Photos live in the img folder (see IMG below) next to these files.
 // To add or swap a photo: drop the file in /images, then add [filename, alt text] to that product's img list.
 // If a file is missing, the card shows the product name instead of a broken image.
 const STORE = "https://close3d.myshopify.com";
