@@ -3,6 +3,7 @@
 // To add or swap a photo: drop the file in /images, then add [filename, alt text] to that product's img list.
 // If a file is missing, the card shows the product name instead of a broken image.
 const STORE = "https://close3d.myshopify.com";
+const IMG = "img/"; // folder name for photos, change here if yours differs
 const VASE = "190 mm (19 cm) tall · PETG or PLA, your choice";
 const PRODUCTS = [
  {name:"Armenian Cross Vase", series:"armenian", price:"$45", handle:"armenian-cross-vase-rocky-stone-pla", spec:VASE,
