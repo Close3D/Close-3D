@@ -16,15 +16,15 @@ const PRODUCTS = [
        ["lake-sevan-vase.png","Lake Sevan vase, 3D printed"]]},
  {name:"Tatev Monastery Vase", series:"armenian", price:"$50", handle:"tatev-monastery-vase-3d-printed-armenian-landmark", spec:VASE,
   blurb:"Tatev Monastery and its gorge. A piece of Armenia for the shelf.",
-  img:[["tatev-1.png","Tatev Monastery 3D printed vase, front view"],
-       ["tatev-2.png","Tatev Monastery 3D printed vase, second angle"]]},
+  img:[["tatev-1.jpg","Tatev Monastery 3D printed vase, front view"],
+       ["tatev-2.jpg","Tatev Monastery 3D printed vase, second angle"]]},
  {name:"Steam Clock Vase", series:"vancouver", price:"$45", handle:"steam-clock-vase-gastown-vancouver", spec:VASE,
   blurb:"Gastown's Steam Clock, printed as a vase. Vancouver without a word of text.",
   img:[["steam-clock-1.jpg","Steam Clock vase, 3D printed, on a wood table"],
        ["steam-clock-2.jpg","Steam Clock vase, second angle"]]},
  {name:"Lions Gate Bridge Vase", series:"vancouver", price:"$45", handle:"lions-gate-bridge-vase-vancouver", spec:VASE,
   blurb:"Bridge towers, North Shore ridgeline and water, wrapped around the vase.",
-  img:[["LIONS_GATE_LEFTVIEW.jpg","Green and black 3D printed vase showing Lions Gate Bridge, on a wood table"],
+  img:[["LIONS_GATE_BRIDGE.jpg","Green and black 3D printed vase showing Lions Gate Bridge, on a wood table"],
        ["LIONS_GATE_BRIDGE_FRONT.jpg","Front of the Lions Gate Bridge vase showing the bridge and skyline relief"]]},
  {name:"Science World Vase", series:"vancouver", price:"$45", handle:"science-world-vase-vancouver", spec:VASE,
   blurb:"Science World's geodesic dome and the False Creek skyline.",
@@ -35,25 +35,28 @@ const PRODUCTS = [
   img:[["phone-stand-front.png","3D printed adjustable phone stand, front"],
        ["phone-stand-rear.png","3D printed adjustable phone stand, rear"]]},
  {name:"Custom Keychains", series:"other", price:"from $12", handle:"custom-keychains-personalized-3d-printed",
-  blurb:"Personalized PETG keychains, black with silver branding.", spec:"Custom colours available",
+  blurb:"Personalized PETG keychains, black with silver branding.", spec:"Custom colours · personalize with name, logo or initials",
   img:[["IMG_20260623_154207120_HDR.jpg","Close 3D custom keychain, front view, black PETG with silver branding"],
-       ["IMG_20260623_154310694_HDR_1_2.jpg","Close 3D custom keychain, angled view"]]}
+       ["IMG_20260623_154310694_HDR_1_2.jpg","Close 3D custom keychain, angled view"]]},
  {name:"Cigar Travel Case", series:"other", price:"from $15", handle:"cigar-travel-case",
   blurb:"Slide-out tray case with a divided interior. Single $15, pack of 3 $40. Case only; cigars not included.",
   spec:"PLA or PETG · Peacock Galaxy Blue, Silk Metallic Black, or custom",
   img:[["CigarTravelBox_withCigars.jpg","Peacock blue 3D printed cigar travel case, open, with two cigars inside"],
        ["CigarTravelBox_Open.jpg","Close-up of a peacock blue cigar travel case with slanted top"]]}
 ];
-
+const DEBUG = location.search.includes("debug");
+function imgFail(el){
+  if(DEBUG){const m=document.createElement("small");m.textContent="MISSING: "+el.src;
+    m.style.cssText="position:relative;display:block;font-size:10px;color:#f66;word-break:break-all;padding:4px";el.replaceWith(m);}
+  else el.remove();
+}
 function card(p){
   const url = STORE+"/products/"+p.handle;
-  const pics = `<span>${p.name}</span>` + p.img.map(i=>`<img src="${IMG}${i[0]}" alt="${i[1]}" loading="lazy" onerror="this.remove()">`).join("");
+  const pics = `<span>${p.name}</span>` + p.img.map(i=>`<img src="${IMG}${i[0]}" alt="${i[1]}" loading="lazy" onerror="imgFail(this)">`).join("");
   const spec = p.spec ? `<p class="spec">${p.spec}</p>` : "";
   return `<article class="card"><a class="ph" href="${url}">${pics}</a><div class="info"><h3>${p.name}</h3><p>${p.blurb}</p>${spec}<div class="foot"><span class="price">${p.price}</span><a class="buy" href="${url}">Buy on store</a></div></div></article>`;
 }
 document.querySelectorAll("[data-series]").forEach(el=>{
   const s = el.dataset.series;
-  el.innerHTML = PRODUCTS.filter(p=>s==="all"||p.series===s).map(card).join("");
-});
   el.innerHTML = PRODUCTS.filter(p=>s==="all"||p.series===s).map(card).join("");
 });
