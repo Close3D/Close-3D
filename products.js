@@ -31,11 +31,11 @@ const PRODUCTS = [
   img:[["science-world-1.jpg","Science World vase, 3D printed, on a wood table"],
        ["science-world-2.jpg","Science World vase, second angle"]]},
  {name:"Adjustable Phone/Tablet Stand", series:"other", price:"$22", handle:"adjustable-phone-tablet-stand-3d-printed-in-petg",
-  blurb:"Adjustable-angle stand printed in PETG.",
+  blurb:"Adjustable-angle stand printed in PETG.", spec:"Custom colours available",
   img:[["phone-stand-front.png","3D printed adjustable phone stand, front"],
        ["phone-stand-rear.png","3D printed adjustable phone stand, rear"]]},
  {name:"Custom Keychains", series:"other", price:"from $12", handle:"custom-keychains-personalized-3d-printed",
-  blurb:"Personalized PETG keychains, black with silver branding.",
+  blurb:"Personalized PETG keychains, black with silver branding.", spec:"Custom colours available",
   img:[["IMG_20260623_154207120_HDR.jpg","Close 3D custom keychain, front view, black PETG with silver branding"],
        ["IMG_20260623_154310694_HDR_1_2.jpg","Close 3D custom keychain, angled view"]]}
  {name:"Cigar Travel Case", series:"other", price:"from $15", handle:"cigar-travel-case",
