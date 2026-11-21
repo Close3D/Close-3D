@@ -37,6 +37,11 @@ const PRODUCTS = [
   blurb:"Personalized PETG keychains, black with silver branding.",
   img:[["IMG_20260623_154207120_HDR.jpg","Close 3D custom keychain, front view, black PETG with silver branding"],
        ["IMG_20260623_154310694_HDR_1_2.jpg","Close 3D custom keychain, angled view"]]}
+ {name:"Cigar Travel Case", series:"other", price:"from $15", handle:"cigar-travel-case",
+  blurb:"Slide-out tray case with a divided interior. Single $15, pack of 3 $40. Case only; cigars not included.",
+  spec:"PLA or PETG · Peacock Galaxy Blue, Silk Metallic Black, or custom",
+  img:[["CigarTravelBox_withCigars.jpg","Peacock blue 3D printed cigar travel case, open, with two cigars inside"],
+       ["CigarTravelBox_Open.jpg","Close-up of a peacock blue cigar travel case with slanted top"]]}
 ];
 function card(p){
   const url = STORE+"/products/"+p.handle;
