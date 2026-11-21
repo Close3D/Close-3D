@@ -44,6 +44,7 @@ const PRODUCTS = [
   img:[["CigarTravelBox_withCigars.jpg","Peacock blue 3D printed cigar travel case, open, with two cigars inside"],
        ["CigarTravelBox_Open.jpg","Close-up of a peacock blue cigar travel case with slanted top"]]}
 ];
+
 function card(p){
   const url = STORE+"/products/"+p.handle;
   const pics = `<span>${p.name}</span>` + p.img.map(i=>`<img src="${IMG}${i[0]}" alt="${i[1]}" loading="lazy" onerror="this.remove()">`).join("");
